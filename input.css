@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-btn {
+  height: 28px;
+  width: 28px;
+  position: relative;
+  
+}
+
+.top, .mid, .bottom {
+  position: absolute;
+  width: 28px;
+  height: 3px;
+  top: 0;
+  left: 0;
+  transform: rotate(0);
+  transition: all 0.5s;
+} 
+
+.mid {
+  transform: translateY(8px);
+}
+
+.bottom {
+  transform: translateY(16px);
+}
+
+.open .mid {
+  display: none;
+}
+
+.open .top {
+  transform: rotate(45deg) translateY(8px) translateX(8px);
+}
+
+.open .bottom {
+  transform: rotate(-45deg) translateY(8px) translateX(-8px);
+}
+
+@layer components {
+  .menu-btn span {
+    @apply bg-grayishViolet;
+  }
+}
+
+#cta {
+  background-image: url('../images/bg-boost-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.cta-img {
+  transform: rotate(180deg);
+}
+
+/* .section-container {
+  @apply mx-auto p-8 lg:px-10;
+} */
+
+/* @layer base {
+  h1 {
+    font-size: 5rem;
+    color: green;
+    @apply text-xl;
+  }
+
+  h2 {
+    @apply bg-red-100;
+    @apply text-yellow-600;
+    @apply text-3xl;
+  }
+}
+
+@layer components {
+  .btn-blue {
+    @apply bg-blue-500 py-2 px-4 rounded-xl font-bold hover:bg-blue-700 text-white text-xl;
+  }
+}
+
+.content-area {
+  @apply bg-green-200;
+  height: theme('spacing.128');
+}
+
+@media screen(xl) {
+  body {
+    @apply bg-black text-white;
+  }
+} */
